@@ -650,6 +650,14 @@ config DMATEST
 	  Simple DMA test client. Say N unless you're debugging a
 	  DMA Device driver.
 
+config AXI_DMAC_DMATEST
+	tristate "AXI-DMAC DMA Test client"
+	depends on DMA_ENGINE
+	select DMA_ENGINE_RAID
+	help
+	  DMA test client for Analog Devices AXI-DMAC DMA. Say N
+	  unless you're debugging a  DMA Device driver.
+
 config DMA_ENGINE_RAID
 	bool
 
