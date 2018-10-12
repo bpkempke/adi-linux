@@ -322,6 +322,8 @@ static void axi_dmac_dequeue_partial_xfers(struct axi_dmac_chan *chan)
 			"Found partial length segment with ID '%u'\n", id);
 
 		if (found_sg) {
+			desc->num_submitted = desc->num_sgs - 1;
+			desc->num_completed = desc->num_submitted;
 			desc->have_partial_xfer = true;
 		}
 
