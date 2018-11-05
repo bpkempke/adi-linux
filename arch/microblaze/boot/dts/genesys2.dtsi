@@ -210,22 +210,6 @@
 			interrupt-parent = <&axi_intc>;
 			interrupts = <9 2>;
 			reg = <0x41600000 0x1000>;
-			pca9548: i2c-switch@74 {
-				#address-cells = <1>;
-				#size-cells = <0>;
-				compatible = "pca9548";
-				reg = <0x74>;
-				fmc_hpc_iic: i2c@1 {
-					#address-cells = <1>;
-					#size-cells = <0>;
-					reg = <1>;
-				};
-				fmc_lpc_iic: i2c@2 {
-					#address-cells = <1>;
-					#size-cells = <0>;
-					reg = <2>;
-				};
-			};
 		};
 		axi_intc: interrupt-controller@41200000 {
 			#interrupt-cells = <2>;
